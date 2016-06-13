@@ -23,6 +23,7 @@ The backend uses the following IBM Bluemix services and runtime:
 ## Getting started
 
 The repository has two folders:
+
 1. The [datasources/](datasources) folder shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix
 
 2. The [mobileservices/](mobileservices) folder shows how to add the **Mobile Client Access**, **Push Notifications**, and **Mobile Analytics** services to your iOS application
@@ -37,29 +38,7 @@ Ensure that you have:
 
 Click the Try **Mobile App Builder** button to get started:
 
-<button style="color:
-		rgb(255, 255, 255);
-    cursor: pointer;
-    display: inline-block;
-    height: 20px,
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    vertical-align: middle;
-    white-space: nowrap;
-    width: 184.594px,
-    column-rule-color: rgb(255, 255, 255);
-    perspective-origin: 128.297px 22.8906px;
-    transform-origin: 128.297px 22.8906px;
-    background: rgb(0, 132, 158) none repeat scroll 0% 0% / auto padding-box border-box;
-    border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 4px 4px 4px 4px;
-    font: normal normal 600 normal 14px / 20px HelveticaNeueBold, HelveticaNeue-Bold, 'Helvetica Neue Bold', HelveticaNeue, 'Helvetica Neue', TeXGyreHerosBold, Helvetica, Tahoma, Geneva, Arial, sans-serif;
-    outline: rgb(255, 255, 255) none 0px;
-    padding: 11.9px 35px;
-    transition: background-color 0.2s ease-in-out 0s;">Try Mobile App Builder</button>  
-
-<br>
+<img src="readme/try.png" href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" alt="select template" width="215px"/>
 
 2. Select the Store Catalog Template
 
