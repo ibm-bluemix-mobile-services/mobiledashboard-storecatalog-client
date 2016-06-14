@@ -13,7 +13,7 @@ The backend uses the following IBM Bluemix services and runtime:
 **Services**
 * **Cloudant NoSQL DB** to hold a list products in a NoSQL database
 * **Object Storage** to store product images
-* **Mobile Client Access** for protecting resources using Facebook authentication
+* **Mobile Client Access** for protecting resources using authentication
 * **Push Notifications** for sending notifications to customers
 * **Mobile Analytics** for monitoring trends and performance of the application
 
@@ -22,11 +22,7 @@ The backend uses the following IBM Bluemix services and runtime:
 
 ## Getting started
 
-The repository has two folders:
-
-1. The [datasources/](datasources) folder shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix
-
-2. The [mobileservices/](mobileservices) folder shows how to add the **Mobile Client Access**, **Push Notifications**, and **Mobile Analytics** services to your iOS application
+The repository has a [datasources/](datasources) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix
 
 ### Before you begin
 Ensure that you have:
@@ -58,9 +54,7 @@ Click the Try **Mobile App Builder** button to get started:
 
 ### Next steps:
 
-1. Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**
-
-2. Follow instructions in [mobileservices/](mobileservices) to add the **Mobile Client Access**, **Push Notifications**, and **Mobile Analytics** services to your iOS application
+Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**
 
 
 ### License
