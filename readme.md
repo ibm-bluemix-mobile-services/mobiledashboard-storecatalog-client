@@ -54,7 +54,7 @@ Click the Try **Mobile App Builder** button to get started:
 
 ### Next steps:
 
-Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**
+Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
 
 
 ### License
