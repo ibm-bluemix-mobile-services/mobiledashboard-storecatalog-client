@@ -36,7 +36,7 @@ Click the Try **Mobile App Builder** button to get started:
 
 <a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/try.png" alt="try button" width="215px"/></a>
 
-2. Select the Store Catalog Template
+2. Select the Store Catalog template
 
 	<img src="readme/step2.png" alt="select template" width="400px"/>
 
