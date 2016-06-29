@@ -46,7 +46,7 @@ A file **.xcworkspace** will be created in your project path. Open it in XCode.
 ### Create API Connect datasource
 
 #### Create a Swift bridge class
-In XCode, create a **BMSRestClient.swift** file at IOSApp, in the Datasources folder, with the following content, replacing appRoute, appGuide and bluemixRegion with current values for your backend. (Accept the creation of the Swift bridge):
+In XCode, create a **BMSRestClient.swift** file at IOSApp, in the Datasources folder, with the following content, replacing appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
 
 ```Swift
 import Foundation
@@ -162,7 +162,6 @@ static NSString *const kAPIConnectBMSDistinctParam         = @"distinct";
 static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
 - (instancetype)initWithUrlString:(NSString *)urlString resourceId:(NSString *)resourceId objectsClass:(__unsafe_unretained Class)objectsClass {
-
     self = [super init];
     if (self) {
         _urlString = urlString;
@@ -174,7 +173,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 }
 
 + (instancetype)datasourceWithUrlString:(NSString *)urlString resourceId:(NSString *)resourceId objectsClass:(__unsafe_unretained Class)objectsClass {
-
     return [[self alloc] initWithUrlString:urlString
                                 resourceId:resourceId
                               objectsClass:objectsClass];
@@ -280,7 +278,8 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
         [exps addObject:[NSString stringWithFormat:@"\"$or\":[%@]",
                          [searches componentsJoinedByString:@","]]];
     }
-    for(NSObject<ROFilter> *filter in optionsFilter.filters) {
+
+    for (NSObject<ROFilter> *filter in optionsFilter.filters) {
         NSString *qs = [filter getQueryString];
         if(qs) {
             [exps addObject:qs];
@@ -373,7 +372,6 @@ static NSString *const kResourceId = @"/api/Products";
 }
 
 - (NSString *)imagePath:(NSString *)path {
-
     if ([path isUrl]) {
         return path;
     }
@@ -384,7 +382,6 @@ static NSString *const kResourceId = @"/api/Products";
 #pragma mark - <ROSearchable>
 
 - (NSArray *)searchableFields {
-
     return @[kProductsDSItemName, kProductsDSItemDescription, kProductsDSItemCategory, kProductsDSItemPrice, kProductsDSItemRating, kProductsDSItemId];
 }
 
