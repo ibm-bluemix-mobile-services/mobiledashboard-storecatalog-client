@@ -57,7 +57,7 @@ Click the Try **Try Bluemix** button to get started:
 
 6. Run the Store Catalog application in Xcode
 
-	<<img src="readme/step6.png" alt="try button" width="400px"/>
+	<img src="readme/step6.png" alt="try button" width="400px"/>
 
 ### Next steps:
 
