@@ -61,7 +61,7 @@ public class BMSRestClient: NSObject {
     public static let appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a"
     public static let bluemixRegion = BMSClient.REGION_US_SOUTH
 
-		public override init() {    
+    public override init() {
         BMSClient.sharedInstance
             .initializeWithBluemixAppRoute(BMSRestClient.appRoute,
                                            bluemixAppGUID: BMSRestClient.appGuid,
@@ -74,7 +74,7 @@ public class BMSRestClient: NSObject {
             queryParameters[key as! String] = value as? String
         }
 
-        let request = Request.init(url: url,
+        let request = Request(url: url,
                                    headers: nil,
                                    queryParameters: queryParameters,
                                    method: .GET,
@@ -92,7 +92,7 @@ public class BMSRestClient: NSObject {
                         success(jsonResult as! NSArray)
                     }
                     else {
-                        success(NSArray.init(object: jsonResult))
+                        success(NSArray(object: jsonResult))
                     }
 
                 } catch let jsonError as NSError {
@@ -103,7 +103,7 @@ public class BMSRestClient: NSObject {
                 success(NSArray())
             }
         }
-    }   
+    }
 }
 ```
 
@@ -151,6 +151,7 @@ Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in 
 #import "NSString+RO.h"
 #import "ROSearchable.h"
 #import "Storecatalog-Swift.h"
+#import "NSDictionary+RO.h"
 
 @interface APIConnectBMSDatasource ()
 
@@ -168,6 +169,7 @@ static NSString *const kAPIConnectBMSDistinctParam         = @"distinct";
 static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
 - (instancetype)initWithUrlString:(NSString *)urlString resourceId:(NSString *)resourceId objectsClass:(__unsafe_unretained Class)objectsClass {
+
     self = [super init];
     if (self) {
         _urlString = urlString;
@@ -192,7 +194,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
 - (void)loadWithOptionsFilter:(ROOptionsFilter *)optionsFilter onSuccess:(RODatasourceSuccessBlock)successBlock onFailure:(RODatasourceErrorBlock)failureBlock {
     NSMutableDictionary *requestParams = [self requestParams:optionsFilter];
-
     NSString *restAPIURL = [self.urlString stringByAppendingString:self.resourceId];
 
     [self.restClient get:restAPIURL parameters:requestParams success:^(NSArray *response) {
@@ -219,6 +220,36 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 }
 
 - (void)distinctValues:(NSString *)columnName filters:(NSArray *)filters onSuccess:(RODatasourceSuccessBlock)successBlock onFailure:(RODatasourceErrorBlock)failureBlock {
+    ROOptionsFilter *optionsFilter = [ROOptionsFilter new];
+    optionsFilter.pageSize = @100000;
+    optionsFilter.baseFilters = [NSMutableArray arrayWithArray:filters];
+
+    NSMutableDictionary *requestParams = [self requestParams:optionsFilter];
+    NSString *restAPIURL = [self.urlString stringByAppendingString:self.resourceId];
+
+    [self.restClient get:restAPIURL parameters:requestParams success:^(NSArray * response) {
+        if (successBlock) {
+
+            NSMutableArray *objects = [NSMutableArray new];
+            for (NSDictionary *dic in response) {
+                NSString *value = [dic ro_stringForKey:columnName];
+                if (value && ![objects containsObject:value]) {
+                    [objects addObject:value];
+                }
+            }
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                successBlock(objects);
+            });
+        }
+
+    } failure:^(NSError * error) {
+        if (failureBlock) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failureBlock(error, nil);
+            });
+        }
+    }];
 }
 
 - (NSString *)imagePath:(NSString *)path {
@@ -236,7 +267,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 }
 
 - (void)loadPageNum:(NSInteger)pageNum withOptionsFilter:(ROOptionsFilter *)optionsFilter onSuccess:(RODatasourceSuccessBlock)successBlock onFailure:(RODatasourceErrorBlock)failureBlock {
-
     if (!optionsFilter) {
         optionsFilter = [ROOptionsFilter new];
     }
@@ -263,32 +293,31 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
     if (self.searchField) {
         searchableFields = [NSArray arrayWithObject:self.searchField];
 
-    }
-    else {
+    } else {
         if (self.delegate) {
             searchableFields = [self.delegate searchableFields];
-        }
-        else {
+        } else {
             searchableFields = [NSArray new];
         }
     }
 
     if (searchableFields && searchableFields.count > 0 && optionsFilter.searchText) {
+
         NSMutableArray* searches = [NSMutableArray new];
         for (int i = 0; i < searchableFields.count; i++) {
-            [searches addObject:[NSString stringWithFormat:@"{\"%@\":{\"$regex\":\"%@\",\"$options\":\"i\"}}",
+            [searches addObject:[NSString stringWithFormat:@"{\"%@\":{\"like\":\"%@\"}}",
                                  searchableFields[i],
                                  optionsFilter.searchText
                                  ]];
         }
-        [exps addObject:[NSString stringWithFormat:@"\"$or\":[%@]",
+        [exps addObject:[NSString stringWithFormat:@"\"or\":[%@]",
                          [searches componentsJoinedByString:@","]]];
     }
 
     for (NSObject<ROFilter> *filter in optionsFilter.filters) {
         NSString *qs = [filter getQueryString];
-        if(qs) {
-            [exps addObject:qs];
+        if (qs) {
+            [exps addObject:[qs stringByReplacingOccurrencesOfString:@"$in" withString:@"inq"]];
         }
     }
 
@@ -307,14 +336,13 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
     }
 
     NSMutableString *where = [NSMutableString new];
-    if(exps.count > 0) {
+    if (exps.count > 0) {
         [where appendFormat:@"{%@}", [exps componentsJoinedByString:@","]];
 
         [where replaceOccurrencesOfString:@"{\"$regex\":"
                                withString:@""
                                   options:NSLiteralSearch
                                     range:NSMakeRange(0, [where length])];
-
 
         [where replaceOccurrencesOfString:@",\"$options\":\"i\"}"
                                withString:@""
@@ -331,7 +359,7 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
         [where appendFormat:@",\"%@\":%@", key, [optionsFilter.extra objectForKey:key]];
     }
 
-    [requestParams setObject:[NSString stringWithFormat:@"{\"where\":%@}", where]
+    [requestParams setObject:[NSString stringWithFormat:@"{\"where\":%@}", [where stringByReplacingOccurrencesOfString:@"$" withString:@""]]
                       forKey:kAPIConnectBMSConditionsParam];
 
     return requestParams;

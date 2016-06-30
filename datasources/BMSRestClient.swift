@@ -6,7 +6,7 @@ public class BMSRestClient: NSObject {
     public static let appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a"
     public static let bluemixRegion = BMSClient.REGION_US_SOUTH
 
-		public override init() {
+    public override init() {
         BMSClient.sharedInstance
             .initializeWithBluemixAppRoute(BMSRestClient.appRoute,
                                            bluemixAppGUID: BMSRestClient.appGuid,
@@ -19,7 +19,7 @@ public class BMSRestClient: NSObject {
             queryParameters[key as! String] = value as? String
         }
 
-        let request = Request.init(url: url,
+        let request = Request(url: url,
                                    headers: nil,
                                    queryParameters: queryParameters,
                                    method: .GET,
@@ -37,7 +37,7 @@ public class BMSRestClient: NSObject {
                         success(jsonResult as! NSArray)
                     }
                     else {
-                        success(NSArray.init(object: jsonResult))
+                        success(NSArray(object: jsonResult))
                     }
 
                 } catch let jsonError as NSError {
