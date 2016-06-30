@@ -1,5 +1,5 @@
 # Adding a new Datasource
-This directory contains instructions on how to change the Mobile App Builder Store Catalog iOS application's datasource to a customized backend on Bluemix.
+This directory contains instructions on how to change the Mobile Dashboard Store Catalog iOS application's datasource to a customized backend on Bluemix.
 
 ### Remove the current project configuration
 1. Open project with Xcode
