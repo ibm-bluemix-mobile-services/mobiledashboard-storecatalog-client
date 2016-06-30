@@ -34,7 +34,7 @@ Ensure that you have:
 
 Click the Try **Try Bluemix** button to get started:
 
-<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/try.png" alt="try button" width="150px"/></a>
+<a href="https://new-console.ng.bluemix.net/" target="_blank"><img src="readme/try.png" alt="try button" width="150px"/></a>
 
 1. Navigate to the Mobile area of Bluemix
 
