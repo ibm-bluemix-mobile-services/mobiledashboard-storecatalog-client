@@ -1,0 +1,23 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'Storecatalog' do
+    pod 'BMSCore', '~> 1.0'
+end
+
+target 'StorecatalogTests' do
+
+end
+
+# keeping the current configuration
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        puts "Updating #{target.name} OTHER_LDFLAGS"
+        target.build_configurations.each do |config|
+            xcconfig_path = config.base_configuration_reference.real_path
+            xcconfig = File.read(xcconfig_path)
+            new_xcconfig = xcconfig.sub('OTHER_LDFLAGS = $(inherited)', 'OTHER_LDFLAGS = $(inherited) -ObjC -l"xml2" -l"sqlite3" -l"z" -framework "CoreGraphics" -framework "CoreText" -framework "ImageIO" -framework "MediaPlayer" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "MapKit"')
+            File.open(xcconfig_path, "w") { |file| file << new_xcconfig }
+        end
+    end
+end
