@@ -28,6 +28,8 @@ Ensure that you have:
 
 * Provisioned your own [customized backend on Bluemix](https://github.com/ibm-bluemix-mobile-services/mobiledashboard-storecatalog-backend)
 
+	<img src="readme/bluegen.gif" alt="bluegen" width="400px"/>
+
 
 ### Create the Mobile Dashboard Store Catalog iOS application
 
