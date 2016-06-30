@@ -33,7 +33,7 @@ Ensure that you have:
 
 ### Create the Mobile Dashboard Store Catalog iOS application
 
-Click the Try **Try Bluemix** button to get started:
+Click the **Try Bluemix** button to get started:
 
 <a href="https://new-console.ng.bluemix.net/" target="_blank"><img src="readme/try.png" alt="try button" width="150px"/></a>
 
