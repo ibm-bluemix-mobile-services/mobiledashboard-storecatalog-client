@@ -1,6 +1,5 @@
 # Mobile Client for Bluemix
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
-[![](https://img.shields.io/badge/mobile-app%20builder-orange.svg)](https://bluemix.net/catalog/services/mobile-app-builder/)
 
 ### IBM Mobile Dashboard Store Catalog iOS application
 The Store Catalog Mobile Client provides instructions for how to integrate a **Bluemix Mobile** iOS Store Catalog application into your own [customized backend on Bluemix](https://github.com/ibm-bluemix-mobile-services/appbuilder-storecatalog-backend).
@@ -27,10 +26,10 @@ The repository has a [datasources/](datasources) folder which shows how to modif
 ### Before you begin
 Ensure that you have:
 
-* Provisioned your own [customized backend on Bluemix](https://github.com/ibm-bluemix-mobile-services/appbuilder-storecatalog-backend)
+* Provisioned your own [customized backend on Bluemix](https://github.com/ibm-bluemix-mobile-services/mobiledashboard-storecatalog-backend)
 
 
-### Create the Mobile App Builder Store Catalog iOS application
+### Create the Mobile Dashboard Store Catalog iOS application
 
 Click the Try **Try Bluemix** button to get started:
 
@@ -38,27 +37,27 @@ Click the Try **Try Bluemix** button to get started:
 
 1. Navigate to the Mobile area of Bluemix
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta"><img src="readme/step1.png" alt="try button" width="400px"/></a>
+	<img src="readme/step1.png" alt="try button" width="400px"/>
 
 2. Click New Project button
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/step2.png" alt="try button" width="400px"/></a>
+	<img src="readme/step2.png" alt="try button" width="400px"/>
 
 3. Select the Store Catalog template
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/step3.png" alt="try button" width="400px"/></a>
+	<img src="readme/step3.png" alt="try button" width="400px"/>
 
 4. Design the application
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/step4.png" alt="try button" width="400px"/></a>
+	<img src="readme/step4.png" alt="try button" width="400px"/>
 
 5. Get the source code for iOS
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/step5.png" alt="try button" width="400px"/></a>
+	<img src="readme/step5.png" alt="try button" width="400px"/>
 
 6. Run the Store Catalog application in Xcode
 
-	<a href="https://console.ng.bluemix.net/catalog/services/mobile-app-builder/?cm_sp=bluemixblog-_-content-_-cta" target="_blank"><img src="readme/step6.png" alt="try button" width="400px"/></a>
+	<<img src="readme/step6.png" alt="try button" width="400px"/>
 
 ### Next steps:
 
