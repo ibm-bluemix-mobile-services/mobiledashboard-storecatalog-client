@@ -432,4 +432,4 @@ static NSString *const kResourceId = @"/api/Products";
 
 ```
 
-> **Note:** If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog.
+> **Note:** If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog. In addition, at this time, you will have to restart your Bluemix application when you redeploy data to the Cloudant NoSQL DB database. This is because API Connect needs to reconnect to your datasource.
