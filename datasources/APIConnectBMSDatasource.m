@@ -23,7 +23,6 @@ static NSString *const kAPIConnectBMSDistinctParam         = @"distinct";
 static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
 - (instancetype)initWithUrlString:(NSString *)urlString resourceId:(NSString *)resourceId objectsClass:(__unsafe_unretained Class)objectsClass {
-
     self = [super init];
     if (self) {
         _urlString = urlString;
@@ -83,7 +82,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
     [self.restClient get:restAPIURL parameters:requestParams success:^(NSArray * response) {
         if (successBlock) {
-
             NSMutableArray *objects = [NSMutableArray new];
             for (NSDictionary *dic in response) {
                 NSString *value = [dic ro_stringForKey:columnName];
@@ -156,7 +154,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
     }
 
     if (searchableFields && searchableFields.count > 0 && optionsFilter.searchText) {
-
         NSMutableArray* searches = [NSMutableArray new];
         for (int i = 0; i < searchableFields.count; i++) {
             [searches addObject:[NSString stringWithFormat:@"{\"%@\":{\"like\":\"%@\"}}",
