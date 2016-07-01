@@ -6,7 +6,7 @@ Ensure that you have:
 * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) Version >= 7.3
 * [CocoaPods](https://cocoapods.org/) Version >= 1.0.0
 
-	`sudo gem install cocoapods`
+  `sudo gem install cocoapods`
 
 ### Remove the current project configuration
 1. Open project with Xcode
@@ -58,7 +58,7 @@ A file **.xcworkspace** will be created in your project path. Open it in Xcode.
 ### Create API Connect datasource
 
 #### Create a Swift bridge class
-In Xcode, create a **BMSRestClient.swift** file at IOSApp, in the Datasources folder, with the following content, replacing appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
+In Xcode, create a **BMSRestClient.swift** file in the Datasources folder at IOSApp with the following content, replacing the appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
 
 [**BMSRestClient.swift**](BMSRestClient.swift)
 
@@ -67,9 +67,9 @@ import Foundation
 import BMSCore
 
 public class BMSRestClient: NSObject {
-    public static let appRoute = "http://storecatalogapic.mybluemix.net"
-    public static let appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a"
-    public static let bluemixRegion = BMSClient.REGION_US_SOUTH
+    public static let appRoute = <REPLACE appRoute HERE (example: appRoute = "http://storecatalogapic.mybluemix.net")>
+    public static let appGuid = <REPLACE appGuid HERE (example: appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a")>
+    public static let bluemixRegion = <REPLACE bluemixRegion HERE (example: bluemixRegion = BMSClient.REGION_US_SOUTH)>
 
     public override init() {
         BMSClient.sharedInstance
@@ -121,7 +121,7 @@ public class BMSRestClient: NSObject {
 The Objective-C classes are generated automatically.
 
 #### Create a API Connect datasource implementation using the previous class
-Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in Datasources folder. Replace "Storecatalog" in the Swift import clause by your current project (if necessary):
+Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in the Datasources folder. Replace "Storecatalog" in the Swift import clause by your current project (if necessary):
 
 [**APIConnectBMSDatasource.h**](APIConnectBMSDatasource.h)
 
@@ -376,7 +376,7 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 ```
 
 ### Modify ProductDS using the previous datasource
-Now we are going to modify **ProductsDS.h** and **ProductsDS.m** to use the new Datasource. Replace "Storecatalog" in the Swift import clause by your current project name (if necessary):
+Now we are going to modify **ProductsDS.h** and **ProductsDS.m** to use the new datasource. Replace "Storecatalog" in the Swift import clause by your current project name (if necessary):
 
 [**ProductsDS.h**](ProductsDS.h)
 
@@ -432,4 +432,16 @@ static NSString *const kResourceId = @"/api/Products";
 
 ```
 
-> **Note:** If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog. In addition, at this time, you will have to restart your Bluemix application when you redeploy data to the **Cloudant NoSQL DB** database. This is because **API Connect** needs to reconnect to your datasource.
+### Run the Store Catalog application in Xcode
+
+Compile and run the Store Catalog application.
+
+All of the code updates that we've just made should have the Store Catalog application now retrieving data from our customized backend on Bluemix.
+
+> **Note:** If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog. Also, at this time, you will have to restart your Bluemix application when you redeploy data to the **Cloudant NoSQL DB** database. This is because **API Connect** needs to reconnect to your datasource.
+
+### Future work
+
+We are working to remove these manual steps in future releases of the new Mobile experience. In addition, we are working on code generation in the Swift programming language for enhanced readability and improved support with our new Swift Client SDKs.
+
+Stay tuned for updates.
