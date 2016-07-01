@@ -3,8 +3,8 @@ This directory contains instructions on how to change the Mobile Dashboard Store
 
 ### Remove the current project configuration
 1. Open project with Xcode
-2. Select project in left navigator
-3. Select info tab in project
+2. Select the project in left navigator
+3. Select the info tab in your project
 4. Select "None" for all configurations options
 
 ### Add BMS Core using CocoaPods
@@ -43,12 +43,12 @@ end
 ### Install pods
 Type `pod install` in your terminal.
 
-A file **.xcworkspace** will be created in your project path. Open it in XCode.
+A file **.xcworkspace** will be created in your project path. Open it in Xcode.
 
 ### Create API Connect datasource
 
 #### Create a Swift bridge class
-In XCode, create a **BMSRestClient.swift** file at IOSApp, in the Datasources folder, with the following content, replacing appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
+In Xcode, create a **BMSRestClient.swift** file at IOSApp, in the Datasources folder, with the following content, replacing appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
 
 [**BMSRestClient.swift**](BMSRestClient.swift)
 
@@ -169,7 +169,6 @@ static NSString *const kAPIConnectBMSDistinctParam         = @"distinct";
 static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
 - (instancetype)initWithUrlString:(NSString *)urlString resourceId:(NSString *)resourceId objectsClass:(__unsafe_unretained Class)objectsClass {
-
     self = [super init];
     if (self) {
         _urlString = urlString;
@@ -229,7 +228,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 
     [self.restClient get:restAPIURL parameters:requestParams success:^(NSArray * response) {
         if (successBlock) {
-
             NSMutableArray *objects = [NSMutableArray new];
             for (NSDictionary *dic in response) {
                 NSString *value = [dic ro_stringForKey:columnName];
@@ -302,7 +300,6 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
     }
 
     if (searchableFields && searchableFields.count > 0 && optionsFilter.searchText) {
-
         NSMutableArray* searches = [NSMutableArray new];
         for (int i = 0; i < searchableFields.count; i++) {
             [searches addObject:[NSString stringWithFormat:@"{\"%@\":{\"like\":\"%@\"}}",

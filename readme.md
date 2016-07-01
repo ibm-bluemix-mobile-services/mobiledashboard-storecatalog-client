@@ -21,7 +21,7 @@ The backend uses the following IBM Bluemix services and runtime:
 
 ## Getting started
 
-The repository has a [datasources/](datasources) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix
+The repository has a [datasources/](datasources) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix.
 
 ### Before you begin
 Ensure that you have:
