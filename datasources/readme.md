@@ -1,6 +1,11 @@
 # Adding a new Datasource
 This directory contains instructions on how to change the Mobile Dashboard Store Catalog iOS application's datasource to a customized backend on Bluemix.
 
+### Before you begin:
+Ensure that you have:
+* Xcode
+* Cocoapods installed
+
 ### Remove the current project configuration
 1. Open project with Xcode
 2. Select the project in left navigator
@@ -421,3 +426,5 @@ static NSString *const kResourceId = @"/api/Products";
 @end
 
 ```
+
+> Note: If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog.
