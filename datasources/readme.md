@@ -432,4 +432,4 @@ static NSString *const kResourceId = @"/api/Products";
 
 ```
 
-> Note: If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog.
+> **Note:** If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog.
