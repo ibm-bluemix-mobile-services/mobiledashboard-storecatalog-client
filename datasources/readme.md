@@ -442,6 +442,6 @@ All of the code updates that we've just made should have the Store Catalog appli
 
 ### Future work
 
-We are working to remove these manual steps in future releases of the new Mobile experience. In addition, we are working on improving the generated code to use the Swift programming language for enhanced readability and support with our new Swift Client SDKs.
+We are working to remove these manual steps in future releases of the new Mobile experience. In addition, we are working on code generation in the Swift programming language for enhanced readability and improved support with our new Swift Client SDKs.
 
 Stay tuned for updates.
