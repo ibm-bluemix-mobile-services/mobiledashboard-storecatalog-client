@@ -1,16 +1,26 @@
 # Adding a new Datasource
 This directory contains instructions on how to change the Mobile Dashboard Store Catalog iOS application's datasource to a customized backend on Bluemix.
 
+### Before you begin:
+Ensure that you have:
+* [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) Version >= 7.3
+* [CocoaPods](https://cocoapods.org/) Version >= 1.0.0
+
+	`sudo gem install cocoapods`
+
 ### Remove the current project configuration
 1. Open project with Xcode
 2. Select the project in left navigator
 3. Select the info tab in your project
-4. Select "None" for all configurations options
+4. Select **None** for all configurations options
+
+<img src="readme/configuration.png"/>
+
 
 ### Add BMS Core using CocoaPods
 1. Open terminal and navigate to app path
 2. Create the pod file typing `pod init`
-3. Edit the pod file, replacing 'Storecatalog' by your project name:
+3. Edit the pod file, replacing "Storecatalog" by your project name (if necessary):
 
 [**Podfile**](Podfile)
 
@@ -111,7 +121,7 @@ public class BMSRestClient: NSObject {
 The Objective-C classes are generated automatically.
 
 #### Create a API Connect datasource implementation using the previous class
-Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in Datasources folder and replace "Storecatalog" in the Swift import clause by your current project:
+Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in Datasources folder. Replace "Storecatalog" in the Swift import clause by your current project (if necessary):
 
 [**APIConnectBMSDatasource.h**](APIConnectBMSDatasource.h)
 
@@ -366,7 +376,7 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 ```
 
 ### Modify ProductDS using the previous datasource
-Replace "Storecatalog" in the Swift import clause by your current project name:
+Now we are going to modify **ProductsDS.h** and **ProductsDS.m** to use the new Datasource. Replace "Storecatalog" in the Swift import clause by your current project name (if necessary):
 
 [**ProductsDS.h**](ProductsDS.h)
 
@@ -421,3 +431,5 @@ static NSString *const kResourceId = @"/api/Products";
 @end
 
 ```
+
+> Note: If you update the images in your customized backend, the old pictures may still be cached in your emulator or device. Make sure you reset the device to ensure the new images are being added to the Store Catalog.
