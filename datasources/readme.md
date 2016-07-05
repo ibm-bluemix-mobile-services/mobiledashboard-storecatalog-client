@@ -1,7 +1,7 @@
 # Adding a new Datasource
 This directory contains instructions on how to change the Mobile Dashboard Store Catalog iOS application's datasource to a customized backend on Bluemix.
 
-### Before you begin:
+### Before you begin
 Ensure that you have:
 * [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) Version >= 7.3
 * [CocoaPods](https://cocoapods.org/) Version >= 1.0.0

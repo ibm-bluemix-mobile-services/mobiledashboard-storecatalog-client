@@ -61,7 +61,7 @@ Click the **Try Bluemix** button to get started:
 
 	<img src="readme/step6.png" alt="try button" width="400px"/>
 
-### Next steps:
+### Next steps
 
 Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
 
