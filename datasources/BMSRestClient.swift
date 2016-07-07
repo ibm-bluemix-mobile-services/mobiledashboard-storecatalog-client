@@ -2,9 +2,11 @@ import Foundation
 import BMSCore
 
 public class BMSRestClient: NSObject {
-    public static let appRoute = <REPLACE appRoute HERE (example: appRoute = "http://storecatalogapic.mybluemix.net")>
-    public static let appGuid = <REPLACE appGuid HERE (example: appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a")>
-    public static let bluemixRegion = <REPLACE bluemixRegion HERE (example: bluemixRegion = BMSClient.REGION_US_SOUTH)>
+    // CHANGE CREDENTIALS HERE
+    public static let appRoute = "REPLACE APP ROUTE INSIDE QUOTES"
+    public static let appGuid = "REPLACE APP GUID INSIDE QUOTES"
+    // Change the region if you are outside of the US
+    public static let bluemixRegion = BMSClient.REGION_US_SOUTH
 
     public override init() {
         BMSClient.sharedInstance
