@@ -20,7 +20,7 @@ Ensure that you have:
 ### Add BMS Core using CocoaPods
 1. Open terminal and navigate to app path
 2. Create the pod file typing `pod init`
-3. Edit the pod file, replacing "Storecatalog" by your project name (if necessary):
+3. Edit the pod file, replacing "Storecatalog" by your project name:
 
 [**Podfile**](Podfile)
 
@@ -58,7 +58,7 @@ A file **.xcworkspace** will be created in your project path. Open it in Xcode.
 ### Create API Connect datasource
 
 #### Create a Swift bridge class
-In Xcode, create a **BMSRestClient.swift** file in the Datasources folder at IOSApp with the following content, replacing the appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button. (Accept the creation of the Swift bridge):
+In Xcode, create a **BMSRestClient.swift** file in the Datasources folder at IOSApp with the following content (**accept the creation of the Swift bridging header**), replacing the appRoute, appGuide, and bluemixRegion with current values for your backend. These values can be recovered by navigating to your **Mobile Client Access** service instance on Bluemix and clicking the **Mobile Options** button:
 
 [**BMSRestClient.swift**](BMSRestClient.swift)
 
@@ -67,9 +67,11 @@ import Foundation
 import BMSCore
 
 public class BMSRestClient: NSObject {
-    public static let appRoute = <REPLACE appRoute HERE (example: appRoute = "http://storecatalogapic.mybluemix.net")>
-    public static let appGuid = <REPLACE appGuid HERE (example: appGuid = "a106afbd-f622-4a6d-baa9-88dfbb421b6a")>
-    public static let bluemixRegion = <REPLACE bluemixRegion HERE (example: bluemixRegion = BMSClient.REGION_US_SOUTH)>
+    // CHANGE CREDENTIALS HERE
+    public static let appRoute = "REPLACE APP ROUTE INSIDE QUOTES"
+    public static let appGuid = "REPLACE APP GUID INSIDE QUOTES"
+		// Change the region if you are outside of the US
+    public static let bluemixRegion = BMSClient.REGION_US_SOUTH
 
     public override init() {
         BMSClient.sharedInstance
@@ -121,7 +123,7 @@ public class BMSRestClient: NSObject {
 The Objective-C classes are generated automatically.
 
 #### Create a API Connect datasource implementation using the previous class
-Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in the Datasources folder. Replace "Storecatalog" in the Swift import clause by your current project (if necessary):
+Create **APIConnectBMSDatasource.h** and **APIConnectBMSDatasource.m** files in the Datasources folder. Replace "Storecatalog" in the Swift import clause by your current project name:
 
 [**APIConnectBMSDatasource.h**](APIConnectBMSDatasource.h)
 
@@ -376,7 +378,7 @@ static NSInteger const kAPIConnectBMSDataPageSize          = 20;
 ```
 
 ### Modify ProductDS using the previous datasource
-Now we are going to modify **ProductsDS.h** and **ProductsDS.m** to use the new datasource. Replace "Storecatalog" in the Swift import clause by your current project name (if necessary):
+Now we are going to modify **ProductsDS.h** and **ProductsDS.m** to use the new datasource. Replace "Storecatalog" in the Swift import clause by your current project name:
 
 [**ProductsDS.h**](ProductsDS.h)
 
