@@ -70,7 +70,7 @@ public class BMSRestClient: NSObject {
     // CHANGE CREDENTIALS HERE
     public static let appRoute = "REPLACE APP ROUTE INSIDE QUOTES"
     public static let appGuid = "REPLACE APP GUID INSIDE QUOTES"
-		// Change the region if you are outside of the US
+    // Change the region if you are outside of the US
     public static let bluemixRegion = BMSClient.REGION_US_SOUTH
 
     public override init() {
