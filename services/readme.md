@@ -4,7 +4,7 @@ This directory contains instructions on how to add the the Mobile Client Access 
 ### Before you begin
 Ensure that you have:
 * Connected your datasource to your custom backend following the instructions [here](../datasources).
-* Added **Push Notifications** to your application in the UI Builder.
+* Added **Push Notifications** to your application using the UI Builder.
 
 ### Setting up Bluemix Mobile services
 Because Bluemix Mobile still generates UI Starters in Objective-C, there are a few steps we need to complete to add the Swift SDKs for each service.
@@ -21,13 +21,13 @@ The following sections will explain how to set up the **Mobile Client Access** a
 platform :ios, '8.0'
 use_frameworks!
 
-target 'storecatalog' do
+target 'Storecatalog' do
     pod 'BMSSecurity', '~> 1.0'
     pod 'BMSAnalytics'
     pod 'BMSCore', '~> 1.0'
 end
 
-target 'storecatalogTests' do
+target 'StorecatalogTests' do
 
 end
 
@@ -44,15 +44,15 @@ post_install do |installer|
     end
 end
 ```
+#### Installing Pods
+Perform a `pod install` and open up your  **.xcworkspace** file.
 
-3. Perform a `pod install`
 
 #### Add BMSDelegate.swift
 
-We are going to add a `BMSDelegate.swift` file with some functions to interact with our Bluemix Mobile services. **Remember** to
-replace your credentials after you copy the code into your project. You can get the `appRoute` and `appGuid` values by navigating
-to your Mobile Client Access instance and clicking the **Mobile Options** tab. You can recover your `apikey` for Mobile Analytics
-by going to your Mobile Analytics service instance and clicking the **Service Credentials** tab.
+We are going to add a **BMSDelegate.swift** file in the same directory as our **AppDelegate.m** with some functions to interact with our Bluemix Mobile services.
+
+**Remember** to replace your credentials after you copy the code into your project. You can get the `appRoute` and `appGuid` values by navigating to your Mobile Client Access instance and clicking the **Mobile Options** tab. You can recover your `apikey` for Mobile Analytics by going to your Mobile Analytics service instance and clicking the **Service Credentials** tab.
 
 [**BMSDelegate.swift**](BMSDelegate.swift)
 
@@ -120,16 +120,14 @@ public class BMSDelegate: NSObject {
 }
 ```
 
-#### Call BMSDelegate.swift from AppDelegate.m
+#### Call BMSDelegate.swift functions from AppDelegate.m
 
-1. Add the following header to the top of the project to import the functions from `BMSDelegate.swift`:
-
+1. Add the following header to your **AppDelegate.m** to import the functions from **BMSDelegate.swift**:
 ```objectivec
 #import "Storecatalog-Swift.h"
 ```
 
-2. Add the code below in the `didFinishLaunchingWithOptions` to run the MCA and Mobile Analytics functions:
-
+2. Add the code below in the `didFinishLaunchingWithOptions` function to run the MCA and Mobile Analytics functions:
 ```objectivec
 BMSDelegate *services = [BMSDelegate new];
 [services mca];
