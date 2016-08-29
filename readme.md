@@ -66,7 +66,7 @@ Click the **Try Bluemix** button to get started:
 
 Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
 
-Subsequently, follow the instructions in [services/](services) to add the **Mobile Client Access* and
+Subsequently, follow the instructions in [services/](services) to add the **Mobile Client Access** and
 **Mobile Analytics** Swift SDKs to the Store Catalog application.
 
 
