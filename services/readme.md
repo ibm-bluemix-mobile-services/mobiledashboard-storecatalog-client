@@ -123,16 +123,16 @@ public class BMSDelegate: NSObject {
 #### Call BMSDelegate.swift functions from AppDelegate.m
 
 1. Add the following header to your **AppDelegate.m** to import the functions from **BMSDelegate.swift**:
-```objectivec
-#import "Storecatalog-Swift.h"
-```
+  ```objectivec
+  #import "Storecatalog-Swift.h"
+  ```
 
 2. Add the code below in the `didFinishLaunchingWithOptions` function to run the MCA and Mobile Analytics functions:
-```objectivec
-BMSDelegate *services = [BMSDelegate new];
-[services mca];
-[services analytics];
-```
+  ```objectivec
+  BMSDelegate *services = [BMSDelegate new];
+  [services mca];
+  [services analytics];
+  ```
 
 ### Run the Store Catalog application in Xcode
 Compile and run the Store Catalog application.
