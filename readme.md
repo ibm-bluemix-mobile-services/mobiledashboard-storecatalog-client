@@ -39,27 +39,28 @@ Click the **Try Bluemix** button to get started:
 
 1. Navigate to the Mobile area of Bluemix
 
-	<img src="readme/step1.png" alt="try button" width="400px"/>
+	<img src="readme/step1.png" width="400px"/>
 
 2. Click New Project button
 
-	<img src="readme/step2.png" alt="try button" width="400px"/>
+	<img src="readme/step2.png" width="400px"/>
 
 3. Select the Store Catalog template
 
-	<img src="readme/step3.png" alt="try button" width="400px"/>
+	<img src="readme/step3.png" width="400px"/>
 
 4. Design the application
 
-	<img src="readme/step4.png" alt="try button" width="400px"/>
+	<img src="readme/step4.png" width="400px"/>
+	> **Note:** Add Push Notifications to your app here.
 
 5. Get the source code for iOS
 
-	<img src="readme/step5.png" alt="try button" width="400px"/>
+	<img src="readme/step5.png" width="400px"/>
 
 6. Run the Store Catalog application in Xcode
 
-	<img src="readme/step6.png" alt="try button" width="400px"/>
+	<img src="readme/step6.png" width="400px"/>
 
 ### Next steps
 
