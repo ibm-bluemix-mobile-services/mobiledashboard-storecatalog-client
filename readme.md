@@ -59,7 +59,7 @@ Click the **Try Bluemix** button to get started:
 
 	<img src="readme/ui-builder.png" width="400px"/>
 
-5. Get the source code for iOS
+5. Get the source code for iOS and read accompanying README to install dependencies
 
 	<img src="readme/code.png" width="400px"/>
 
