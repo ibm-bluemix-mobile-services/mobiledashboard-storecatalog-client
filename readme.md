@@ -21,7 +21,7 @@ The backend uses the following IBM Bluemix services and runtime:
 
 ## Getting started
 
-The repository has a [datasources/](datasources) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix.
+The repository has a [datasources-objc/](datasources-objc) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix.
 
 ### Before you begin
 Ensure that you have:
@@ -35,28 +35,33 @@ Ensure that you have:
 
 Click the **Try Bluemix** button to get started:
 
-<a href="https://new-console.ng.bluemix.net/" target="_blank"><img src="readme/try.png" alt="try button" width="150px"/></a>
+<a href="https://console.ng.bluemix.net/mobile/getting-started/" target="_blank"><img src="readme/try.png" alt="try button" width="150px"/></a>
 
 1. Navigate to the Mobile area of Bluemix
 
-	<img src="readme/step1.png" width="400px"/>
+	<img src="readme/getting-started.png" width="400px"/>
 
-2. Click New Project button
+2. Click **Create Project** button
 
-	<img src="readme/step2.png" width="400px"/>
+	<img src="readme/projects.png" width="400px"/>
 
-3. Select the Store Catalog template
+3. Select the Store Catalog Starter
 
-	<img src="readme/step3.png" width="400px"/>
+	<img src="readme/catalog.png" width="400px"/>
+
+4. Add capabilities to your project
+
+	<img src="readme/capabilities.png" width="400px"/>
+
+	> **Note:** At this time, the Project page does not allow the reuse of existing service capabilities. The easiest way to use the service instances from your custom backend is adding those capabilities, and subsequently, replacing the credentials in your downloaded code's `BMSCredentials.plist` file with the credentials of the service instances you created while running `bluegen`.
 
 4. Design the application
 
-	<img src="readme/step4.png" width="400px"/>
-	> **Note:** Add Push Notifications to your app here.
+	<img src="readme/ui-builder.png" width="400px"/>
 
 5. Get the source code for iOS
 
-	<img src="readme/step5.png" width="400px"/>
+	<img src="readme/code.png" width="400px"/>
 
 6. Run the Store Catalog application in Xcode
 
@@ -64,11 +69,7 @@ Click the **Try Bluemix** button to get started:
 
 ### Next steps
 
-Follow instructions in [datasources/](datasources) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
-
-Subsequently, follow the instructions in [services/](services) to add the **Mobile Client Access** and
-**Mobile Analytics** Swift SDKs to the Store Catalog application.
-
+Follow instructions in [datasources-objc/](datasources-objc) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
 
 ### License
 This package contains sample code provided in source code form. The samples are licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the license in the license file within this package.
