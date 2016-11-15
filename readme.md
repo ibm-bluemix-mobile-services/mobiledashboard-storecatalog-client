@@ -53,7 +53,7 @@ Click the **Try Bluemix** button to get started:
 
 	<img src="readme/capabilities.png" width="400px"/>
 
-	> **Note:** At this time, the Project page does not allow the reuse of existing service capabilities. The easiest way to use the service instances from your custom backend is adding those capabilities, and subsequently, replacing the credentials in your downloaded code's `BMSCredentials.plist` file with the credentials of the service instances you created while running `bluegen`.
+	> **Note:** At this time, the Project page does not allow the reuse of existing service capabilities. The easiest way to use the service instances from your custom backend is adding new capabilities, and subsequently, replacing the credentials in your downloaded code's `BMSCredentials.plist` file with the credentials of the service instances you created while running `bluegen`.
 
 4. Design the application
 
