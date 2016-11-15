@@ -21,7 +21,7 @@ The backend uses the following IBM Bluemix services and runtime:
 
 ## Getting started
 
-The repository has a [datasources-objc/](datasources-objc) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix.
+The repository has a [datasources-swift/](datasources-swift) folder which shows how to modify the Store Catalog iOS application to retrieve data from your custom backend using **API Connect** as a single point of REST integration connected to the **Cloudant NoSQL DB** and **Object Storage** services on Bluemix.
 
 ### Before you begin
 Ensure that you have:
@@ -59,7 +59,7 @@ Click the **Try Bluemix** button to get started:
 
 	<img src="readme/ui-builder.png" width="400px"/>
 
-5. Get the source code for iOS and read accompanying README to install dependencies
+5. Get the source code for iOS in Swift and read accompanying README to install dependencies
 
 	<img src="readme/code.png" width="400px"/>
 
@@ -69,7 +69,7 @@ Click the **Try Bluemix** button to get started:
 
 ### Next steps
 
-Follow instructions in [datasources-objc/](datasources-objc) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
+Follow instructions in [datasources-swift/](datasources-swift) to change the datasource to your custom backend and retrieve data from **Cloudant NoSQL DB** and **Object Storage** services through **API Connect**.
 
 ### License
 This package contains sample code provided in source code form. The samples are licensed under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the license in the license file within this package.
