@@ -303,7 +303,7 @@ extension APIConnectDatasource: CRUD {
 import CoreLocation
 
 class APIConnectDatasourceFilter : DatasourceFilter {
-    func create(field: String, string: String) -> StringFilter? {
+    func create(field: String, string: String?) -> StringFilter? {
         return APIConnectStringFilter(field: field, string: string)
     }
 
@@ -311,7 +311,7 @@ class APIConnectDatasourceFilter : DatasourceFilter {
         return APIConnectStringListFilter(field: field, list: stringList)
     }
 
-    func create(field: String, number: Double) -> NumberFilter? {
+    func create(field: String, number: NSNumber?) -> NumberFilter? {
         return APIConnectNumberFilter(field: field, number: number)
     }
 
@@ -375,9 +375,9 @@ class APIConnectNumberFilter : NumberFilter {
 
     var field: String!
     var value: AnyObject?
-    var number: Double?
+    var number: NSNumber?
 
-    init(field: String?, number: Double?) {
+    init(field: String?, number: NSNumber?) {
         self.field = field
         self.number = number
     }
