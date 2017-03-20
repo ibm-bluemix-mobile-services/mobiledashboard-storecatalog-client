@@ -1,3 +1,5 @@
+> **ATTENTION:** The UI starters have been deprecated and this sample no longer supported. Please visit [Bluemix](https://console.bluemix.net/developer/getting-started/) and choose a starter to add capabilities to download and start coding with a working project.
+
 # Mobile Client for Bluemix
 [![](https://img.shields.io/badge/bluemix-powered-blue.svg)](https://bluemix.net)
 
